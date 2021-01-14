@@ -1,0 +1,85 @@
+<!-- TWO BUTTONS -->
+
+<!-- LINK TO HOME -->
+<!-- LINK TO VIEW TABLES -->
+
+<!-- FORM -->
+<!-- NAME
+EMAIL
+PHONE
+ID -->
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Hot Restaurant</h1>
+        <hr />
+
+        <h2>Make your reservation!</h3>
+        <br>
+        <a href="/add"
+          ><button class="btn btn-danger btn-lg">
+            <span class="fa"></span> Home
+          </button></a
+        >
+        <a href="/api/characters"
+          ><button class="btn btn-primary btn-lg">
+            <span class="fa fa-eye"></span> View Tables
+          </button></a
+        >
+      </div>
+      <form>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Name</label>
+            <input type="text" class="form-control" id="reservation-name">
+          </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Phone Number</label>
+            <input type="text" class="form-control" id="reservation-number">
+          </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="reservation-email" aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Unique ID</label>
+          <input type="text" class="form-control" id="reservation-ID">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <!-- FORM SHOULD HAVE SUBMIT BUTTON
+WHAT HAPPENS WHEN I CLICK THE BUTTON
+USE JQUERY
+MAKE AJAX CALL
+POST REQUEST
+TO EXPRESS ROUTE
+CREATE NEW RESERVATION
+INFORM THE USER -->
+    <script src="" async defer></script>
+  </body>
+</html>
