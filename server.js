@@ -83,39 +83,3 @@ app.post("/api/tables", function (req, res) {
 app.listen(PORT, function () {
   console.log("App listening on PORT " + PORT);
 });
-<<<<<<< HEAD
-
-
-
-
-
-var http = require('http');
-var options = {
-  host: 'www.google.com',
-  path: 'home.html'
-};
-
-var req = http.get(options, function(res) {
-  console.log('STATUS: ' + res.statusCode);
-  console.log('HEADERS: ' + JSON.stringify(res.headers));
-
-  // Buffer the body entirely for processing as a whole.
-  var bodyChunks = [];
-  res.on('data', function(chunk) {
-    // You can process streamed parts here...
-    bodyChunks.push(chunk);
-  }).on('end', function() {
-    var body = Buffer.concat(bodyChunks);
-    console.log('BODY: ' + body);
-    // ...and/or process the entire body here.
-  })
-});
-
-req.on('error', function(e) {
-  console.log('ERROR: ' + e.message);
-});
-
-
-
-=======
->>>>>>> ea3c82a14509be7fbf510fc609067a5bdaec8a62
