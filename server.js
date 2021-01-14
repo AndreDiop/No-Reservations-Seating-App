@@ -36,18 +36,37 @@ app.get("/", function (req, res) {
 });
 
 // ROUTE FOR TABLES
-app.get("/add", function (req, res) {
+app.get("/tables", function (req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
 });
 
 // // ROUTE FOR RESERVE
-app.get("/add", function (req, res) {
+app.get("/reserve", function (req, res) {
   res.sendFile(path.join(__dirname, "reserve.html"));
 });
 // API ROUTES
 
 // GET ALL TABLE DATA
+app.get("/api/tables", function(req, res) {
+    return res.json(tables);
+  });
 // CREATE A TABLE/RESERVATION
+app.post("/api/tables", function(req, res) {
+    // req.body hosts is equal to the JSON post sent from the user
+    // This works because of our body parsing middleware
+    var newTables = req.body;
+  
+    // Using a RegEx Pattern to remove spaces from newTables
+    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+    newTables.routeName = newTables.name.replace(/\s+/g, "").toLowerCase();
+  
+    console.log(newTables);
+  
+    characters.push(newTables);
+  
+    res.json(newTables);
+  });
+  
 // LISTEN ON THE PORT
 app.listen(PORT, function () {
   console.log("App listening on PORT " + PORT);
