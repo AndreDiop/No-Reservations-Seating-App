@@ -1,15 +1,54 @@
-// require express
+// REQUIRE EXPRESS
+var express = require("express");
+var path = require("path");
+// CREATE AN INSTANCE OF EXPRESS
+var app = express();
 
-const { runInContext } = require("vm")
+// CREATE A PORT FOR THE APP TO RUN
+var PORT = 3000;
+// BUT ALSO LISTEN TO ENVIRONMENT VARIABLES SO WE CAN DEPLOY TO HEROKU
+// ADD MIDDLEWARE
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+// COPY/PASTE FROM STAR WARS APP
 
-create a port for the app to runInContext
-also listne to the enviomment variannb;es sp we can deplot to heorki
+// CREATE AN ARRAY OF TABLES
+var tables = [
+    {
+      name: "Yoda",
+      phone: "Jedi Master",
+      email: 900,
+      id: 2000
+    },
+// CREATE AN ARRAY FOR WAITLIST
+// ARRAYS OF OBJECTS. OBJECTS SHOULD HAVE
+// NAME
+// PHONE
+// EMAIL
+// ID
+// HTML ROUTES
+// Basic route that sends the user first to the AJAX Page
 
-add middleware 
-copy paste from star wars app 
 
-create arra yof tables
-create array for waitlist
 
-array of objects which Have
-nam
+
+// ROUTE FOR HOME
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "home.html"));
+  });
+  
+// ROUTE FOR TABLES
+app.get("/add", function(req, res) {
+    res.sendFile(path.join(__dirname, "tables.html"));
+  });
+
+// ROUTE FOR RESERVE
+app.get("/add", function(req, res) {
+    res.sendFile(path.join(__dirname, "reserve.html"));
+  });
+// API ROUTES
+
+// GET ALL TABLE DATA
+// CREATE A TABLE/RESERVATION
+// LISTEN ON THE PORT
+
