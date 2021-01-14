@@ -50,7 +50,7 @@ app.get("/tables", function (req, res) {
 
 // // ROUTE FOR RESERVE
 app.get("/reserve", function (req, res) {
-  res.sendFile(path.join(__dirname, "reserve", "reserve.html"));
+  res.sendFile(path.join(__dirname, "views", "reserve.html"));
 });
 // API ROUTES
 
