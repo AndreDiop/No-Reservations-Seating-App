@@ -1,19 +1,24 @@
 {
-  "name": "no-reservations-seating-app",
+  "name": "No-Reservations-Seating-App",
   "version": "1.0.0",
-  "description": "This application will let you add a reservation.",
-  "main": "index.js",
+  "description": "## Description",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AndreDiop/No-Reservations-Seating-App.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AndreDiop/No-Reservations-Seating-App/issues"
   },
-  "homepage": "https://github.com/AndreDiop/No-Reservations-Seating-App#readme"
+  "homepage": "https://github.com/AndreDiop/No-Reservations-Seating-App#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
