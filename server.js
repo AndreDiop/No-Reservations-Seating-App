@@ -17,7 +17,7 @@ app.use(express.json());
 var tables = [
   {
     name: "Andre",
-    phone: 4048490928,
+    phoneNumber: 4048490928,
     email: "Andre@gmail.com",
     id: 1,
   },
@@ -26,7 +26,7 @@ var tables = [
 var waitlist = [
   {
     name: "Chelsea",
-    phone: 4048674334,
+    phoneNumber: 4048674334,
     email: "Chelsea@gmail.com",
     id: 1,
   },

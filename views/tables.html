@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -97,9 +96,9 @@
           listItem.append(
             $("<h2>").text("Table #" + (i + 1)),
             $("<hr>"),
-            $("<h2>").text("ID: " + tableData[i].customerID),
-            $("<h2>").text("Name: " + tableData[i].customerName),
-            $("<h2>").text("Email: " + tableData[i].customerEmail),
+            $("<h2>").text("ID: " + tableData[i].id),
+            $("<h2>").text("Name: " + tableData[i].name),
+            $("<h2>").text("Email: " + tableData[i].email),
             $("<h2>").text("Phone: " + tableData[i].phoneNumber)
           );
 
@@ -130,9 +129,9 @@
           listItem.append(
             $("<h2>").text("Table #" + (i + 1)),
             $("<hr>"),
-            $("<h2>").text("ID: " + waitData[i].customerID),
-            $("<h2>").text("Name: " + waitData[i].customerName),
-            $("<h2>").text("Email: " + waitData[i].customerEmail),
+            $("<h2>").text("ID: " + waitData[i].id),
+            $("<h2>").text("Name: " + waitData[i].name),
+            $("<h2>").text("Email: " + waitData[i].email),
             $("<h2>").text("Phone: " + waitData[i].phoneNumber)
           );
 
