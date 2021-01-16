@@ -7,6 +7,7 @@ var app = express();
 // CREATE A PORT FOR THE APP TO RUN
 var PORT = 3000;
 // BUT ALSO LISTEN TO ENVIRONMENT VARIABLES SO WE CAN DEPLOY TO HEROKU
+
 // ADD MIDDLEWARE
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -15,19 +16,19 @@ app.use(express.json());
 // CREATE AN ARRAY OF TABLES
 var tables = [
   {
-    name: "Yoda",
-    phone: "Jedi Master",
-    email: 900,
-    id: 2000,
+    name: "Andre",
+    phone: 4048490928,
+    email: "Andre@gmail.com",
+    id: 1,
   },
 ];
 // CREATE AN ARRAY FOR WAITLIST
-var waitList = [
+var waitlist = [
   {
-    name: "Yoda",
-    phone: "Jedi Master",
-    email: 900,
-    id: 2000,
+    name: "Chelsea",
+    phone: 4048674334,
+    email: "Chelsea@gmail.com",
+    id: 1,
   },
 ];
 // ARRAYS OF OBJECTS. OBJECTS SHOULD HAVE
@@ -36,6 +37,7 @@ var waitList = [
 // EMAIL
 // ID
 // HTML ROUTES
+
 // Basic route that sends the user first to the AJAX Page
 
 // ROUTE FOR HOME
@@ -81,5 +83,5 @@ app.post("/api/tables", function (req, res) {
 
 // LISTEN ON THE PORT
 app.listen(PORT, function () {
-  console.log("App listening on PORT " + PORT);
+  console.log("No Reservations Table App listening on PORT " + PORT);
 });
