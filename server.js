@@ -16,19 +16,19 @@ app.use(express.json());
 // CREATE AN ARRAY OF TABLES
 var tables = [
   {
-    name: "Andre",
+    customerName: "Andre",
     phoneNumber: 4048490928,
-    email: "Andre@gmail.com",
-    id: 1,
+    customerEmail: "Andre@gmail.com",
+    customerID: 1,
   },
 ];
 // CREATE AN ARRAY FOR WAITLIST
 var waitlist = [
   {
-    name: "Chelsea",
+    customerName: "Chelsea",
     phoneNumber: 4048674334,
-    email: "Chelsea@gmail.com",
-    id: 1,
+    customerEmail: "Chelsea@gmail.com",
+    customerID: 1,
   },
 ];
 // ARRAYS OF OBJECTS. OBJECTS SHOULD HAVE
@@ -38,8 +38,7 @@ var waitlist = [
 // ID
 // HTML ROUTES
 
-// Basic route that sends the user first to the AJAX Page
-
+// API ROUTES
 // ROUTE FOR HOME
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "views", "home.html"));
@@ -54,7 +53,6 @@ app.get("/tables", function (req, res) {
 app.get("/reserve", function (req, res) {
   res.sendFile(path.join(__dirname, "views", "reserve.html"));
 });
-// API ROUTES
 
 // GET ALL TABLE DATA
 app.get("/api/tables", function (req, res) {
@@ -66,19 +64,24 @@ app.get("/api/waitlist", function (req, res) {
 
 // CREATE A TABLE/RESERVATION
 app.post("/api/tables", function (req, res) {
-  // req.body hosts is equal to the JSON post sent from the user
-  // This works because of our body parsing middleware
-  var newTables = req.body;
+  if (tables.length < 5) {
+    tables.push(req.body);
+    return res.send(true);
+  } else {
+    waitlist.push(req.body);
+    return res.send(false);
+  }
+});
 
-  // Using a RegEx Pattern to remove spaces from newTables
-  // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  newTables.routeName = newTables.name.replace(/\s+/g, "").toLowerCase();
-
-  console.log(newTables);
-
-  characters.push(newTables);
-
-  res.json(newTables);
+// Clear Tables
+app.post("/api/clear", function (req, res) {
+  tables.splice(0, tables.length);
+  waitlist.splice(0, waitlist.length);
+  res.json({
+    error: false,
+    message: "Cleared tables and waitlist",
+    data: null,
+  });
 });
 
 // LISTEN ON THE PORT
